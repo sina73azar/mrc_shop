@@ -18,7 +18,10 @@ data class Product(
 
     @ElementCollection
     @CollectionTable(name = "product_images", joinColumns = [JoinColumn(name = "product_id")])
-    @Column(name = "image_url")
+    @Column(
+        name = "image_url", nullable =
+            true
+    )
     val images: List<String> = listOf(),
 
     @ManyToOne(fetch = FetchType.LAZY)
